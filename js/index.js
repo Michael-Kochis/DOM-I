@@ -50,8 +50,21 @@ cta.setAttribute('src', siteContent["cta"]["img-src"])
 let navItems = document.querySelectorAll("nav a");
 navItems.forEach((item, index) => {
   let crunch = index +1;
+  item.style.color="green";
   item.innerHTML = siteContent["nav"][`nav-item-${crunch}`];
 });
+
+let navBar = document.querySelector("nav");
+let neoFirst = document.createElement("a");
+neoFirst.innerHTML= "First";
+neoFirst.style.color = "green";
+navBar.prepend(neoFirst);
+
+let neoLast = document.createElement("a");
+neoLast.innerHTML= "Last";
+neoLast.style.color = "green";
+navBar.appendChild(neoLast);
+
 
 let ctaHeader = document.querySelector(".cta-text h1");
 ctaHeader.innerHTML = siteContent["cta"]["h1"];
